@@ -1,21 +1,23 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plug#begin('~/.vim/bundle') " vim-plug 初始化
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-" Plugin 'Yggdroot/indentLine'
-" Plugin 'klen/python-mode'
-Plugin 'bigeagle/molokai'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'bling/vim-airline'
+"""
+" 插件列表
+"""
 
-call vundle#end()            " required
+" 必须使用单引号
+
+Plug 'gmarik/Vundle.vim'
+" Plug 'Yggdroot/indentLine'
+" Plug 'klen/python-mode'
+Plug 'bigeagle/molokai'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'bling/vim-airline'
+
+" 结束插件列表
+call plug#end()
 filetype plugin indent on    " required
 
 if !exists("g:vimrc_loaded")
@@ -44,6 +46,9 @@ syntax on           " 打开语法高亮
 filetype on         " 打开文件类型支持
 filetype plugin on  " 打开文件类型插件支持
 filetype indent on  " 打开文件类型缩进支持
+
+" 退出Vim时清屏
+au VimLeave * :!clear
  
 set list lcs=tab:\¦\   " 使用 ¦ 来显示 tab 缩进
  
