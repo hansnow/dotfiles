@@ -1,0 +1,7 @@
+interface:
+  display_name: "Setup Han macOS"
+  short_description: "Apply Han's new-Mac defaults"
+  default_prompt: "Use $setup-han-macos to configure this Mac with Han's personal defaults."
+
+policy:
+  allow_implicit_invocation: true
